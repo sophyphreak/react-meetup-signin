@@ -45,10 +45,13 @@ class Basic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      personList: getLocalStorage()
+      personList: []
     };
   }
-  componentDidUpdate() {}
+  componentDidMount() {
+    const personList = getLocalStorage();
+    this.setState(() => ({ personList }));
+  }
   addSignIn(person) {
     person.date = moment().format('dddd, MMMM Do YYYY');
     const { personList } = this.state;
