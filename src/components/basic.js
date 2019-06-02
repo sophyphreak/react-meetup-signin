@@ -33,23 +33,33 @@ const initialValues = {
   paymentMethod: ''
 };
 
+const getLocalStorage = () => {
+  let local = [];
+  if (!JSON.parse(localStorage.getItem('local'))) {
+    return local;
+  }
+  return JSON.parse(localStorage.getItem('local'));
+};
+
 class Basic extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      personList: []
+      personList: getLocalStorage()
     };
-    this.addSignIn = this.addSignIn.bind(this);
   }
+  componentDidUpdate() {}
   addSignIn(person) {
     person.date = moment().format('dddd, MMMM Do YYYY');
     const { personList } = this.state;
     personList.push(person);
     this.setState(() => ({ personList }));
+    localStorage.setItem('local', JSON.stringify(personList));
   }
   clearState() {
     const personList = [];
     this.setState(() => ({ personList }));
+    localStorage.clear();
   }
   render() {
     return (
