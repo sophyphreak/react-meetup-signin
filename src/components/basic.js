@@ -215,6 +215,8 @@ class Basic extends Component {
         </CSVLink>
         <br />
         <br />
+        <br />
+        <br />
         <button onClick={() => this.clearState()}>clear data</button>
       </div>
     );
