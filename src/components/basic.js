@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import moment from 'moment';
-import { CSVLink } from 'react-csv';
+import XLSX from 'xlsx';
 
 const SignInSchema = Yup.object().shape({
   name: Yup.string()
@@ -63,6 +63,31 @@ class Basic extends Component {
     const personList = [];
     this.setState(() => ({ personList }));
     localStorage.clear();
+  }
+  downloadXlsxFile() {
+    // Convert file to useable format array of arrays
+    const personList = this.state.personList;
+    const data = [
+      ['Name', 'Email', 'Hear About Us', 'Amount Paid', 'Payment Method']
+    ];
+    personList.forEach(person => {
+      data.push([
+        person.name,
+        person.email,
+        person.heardAboutUs,
+        person.amountPaid,
+        person.paymentMethod
+      ]);
+    });
+
+    // use XLSX to convert and download file
+    const getFilename = () =>
+      `Kadampa signin ${moment().format('dddd, MMMM Do')}.xlsx`;
+    const filename = getFilename();
+    const worksheet = XLSX.utils.aoa_to_sheet(data);
+    const new_workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(new_workbook, worksheet, 'SheetJS');
+    XLSX.writeFile(new_workbook, filename);
   }
   render() {
     return (
@@ -199,22 +224,7 @@ class Basic extends Component {
         <br />
         <br />
         <br />
-        <CSVLink
-          data={this.state.personList}
-          headers={[
-            { label: 'Name', key: 'name' },
-            { label: 'Email', key: 'email' },
-            { label: 'Hear about us', key: 'heardAboutUs' },
-            { label: 'Amount Paid', key: 'amountPaid' },
-            { label: 'Payment Method', key: 'paymentMethod' },
-            { label: 'Date', key: 'date' }
-          ]}
-          filename={`Kadampa signin ${moment().format('dddd, MMMM Do')}`}
-        >
-          Download data
-        </CSVLink>
-        <br />
-        <br />
+        <button onClick={() => this.downloadXlsxFile()}>Download data</button>
         <br />
         <br />
         <button onClick={() => this.clearState()}>clear data</button>

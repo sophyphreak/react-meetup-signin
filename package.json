@@ -17,9 +17,9 @@
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-csv": "^1.1.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "xlsx": "^0.14.3",
     "yup": "^0.27.0"
   },
   "devDependencies": {
