@@ -3,6 +3,16 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import moment from 'moment';
 import XLSX from 'xlsx';
+import {
+  FormGroup,
+  Col,
+  Row,
+  Button,
+  Label,
+  Input,
+  InputGroup,
+  FormFeedback
+} from 'reactstrap';
 
 const SignInSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,7 +28,7 @@ const SignInSchema = Yup.object().shape({
     .required('Required'),
   amountPaid: Yup.number()
     .min(0, 'Not enough!')
-    .required('Required'),
+    .required('Must be a number'),
   paymentMethod: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
@@ -96,13 +106,73 @@ class Basic extends Component {
           initialValues={initialValues}
           validationSchema={SignInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
+            console.log(values);
             this.addSignIn(values);
             resetForm(initialValues);
             setSubmitting(false);
           }}
         >
-          {({ isSubmitting }) => (
+          {({ errors, touched, isSubmitting }) => (
             <Form>
+              <FormGroup>
+                <Col
+                  sm="12"
+                  md={{ size: 8, offset: 2 }}
+                  lg={{ size: 4, offset: 4 }}
+                >
+                  <Label for="name">Name</Label>
+                  <Input
+                    type="text"
+                    name="name"
+                    tag={Field}
+                    invalid={errors.name && touched.name}
+                  />
+                  <FormFeedback>{errors.name}</FormFeedback>
+                  <br />
+                  <Label for="email">Email</Label>
+                  <Input
+                    type="email"
+                    name="email"
+                    tag={Field}
+                    invalid={errors.email && touched.email}
+                  />
+                  <FormFeedback>{errors.email}</FormFeedback>
+                  <br />
+                  <Label for="heardAboutUs">How did you hear about us?</Label>
+                  <Input
+                    type="text"
+                    name="heardAboutUs"
+                    tag={Field}
+                    invalid={errors.heardAboutUs && touched.heardAboutUs}
+                  />
+                  <FormFeedback>{errors.heardAboutUs}</FormFeedback>
+                  <br />
+                  <Label for="amountPaid">Amount Paid</Label>
+                  <InputGroup>
+                    <p style={{ margin: '.45em .4em 0 0' }}>$</p>
+                    <Input
+                      type="number"
+                      name="amountPaid"
+                      tag={Field}
+                      invalid={errors.amountPaid && touched.amountPaid}
+                    />
+                    <FormFeedback>{errors.amountPaid}</FormFeedback>
+                  </InputGroup>
+                  <br />
+                  <Label for="paymentMethod">Payment Method</Label>
+                  <Input
+                    type="text"
+                    name="paymentMethod"
+                    tag={Field}
+                    invalid={errors.paymentMethod && touched.paymentMethod}
+                  />
+                  <FormFeedback>{errors.paymentMethod}</FormFeedback>
+                  <br />
+                  <Button type="submit" color="primary" disabled={isSubmitting}>
+                    Submit
+                  </Button>
+                </Col>
+              </FormGroup>
               <label>Name</label>
               <br />
               <Field type="text" name="name" />
