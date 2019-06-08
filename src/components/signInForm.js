@@ -50,7 +50,7 @@ const getLocalStorage = () => {
   return JSON.parse(localStorage.getItem('local'));
 };
 
-class Basic extends Component {
+class SignInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -275,4 +275,4 @@ class Basic extends Component {
   }
 }
 
-export default Basic;
+export default SignInForm;
