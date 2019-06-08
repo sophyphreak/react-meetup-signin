@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import moment from 'moment';
 import XLSX from 'xlsx';
 import {
   FormGroup,
   Col,
-  Row,
   Button,
   Label,
   Input,
@@ -115,11 +114,7 @@ class Basic extends Component {
           {({ errors, touched, isSubmitting }) => (
             <Form>
               <FormGroup>
-                <Col
-                  sm="12"
-                  md={{ size: 8, offset: 2 }}
-                  lg={{ size: 4, offset: 4 }}
-                >
+                <Col sm="12" md={{ size: 8, offset: 2 }}>
                   <Label for="name">Name</Label>
                   <Input
                     type="text"
@@ -168,45 +163,15 @@ class Basic extends Component {
                   />
                   <FormFeedback>{errors.paymentMethod}</FormFeedback>
                   <br />
-                  <Button type="submit" color="primary" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    style={{ backgroundColor: 'rebeccapurple' }}
+                    disabled={isSubmitting}
+                  >
                     Submit
                   </Button>
                 </Col>
               </FormGroup>
-              <label>Name</label>
-              <br />
-              <Field type="text" name="name" />
-              <ErrorMessage name="email" component="div" />
-              <br />
-              <br />
-              <label>Email</label>
-              <br />
-              <Field type="email" name="email" />
-              <ErrorMessage name="email" component="div" />
-              <br />
-              <br />
-              <label>How'd you hear about us</label>
-              <br />
-              <Field type="text" name="heardAboutUs" />
-              <ErrorMessage name="heardAboutUs" component="div" />
-              <br />
-              <br />
-              <label>Amount Paid</label>
-              <br />
-              <label>$</label>
-              <Field type="number" name="amountPaid" />
-              <ErrorMessage name="amountPaid" component="div" />
-              <br />
-              <br />
-              <label>Payment Method</label>
-              <br />
-              <Field type="text" name="paymentMethod" />
-              <ErrorMessage name="paymentMethod" component="div" />
-              <br />
-              <br />
-              <button type="submit" disabled={isSubmitting}>
-                Submit
-              </button>
             </Form>
           )}
         </Formik>
@@ -294,10 +259,14 @@ class Basic extends Component {
         <br />
         <br />
         <br />
-        <button onClick={() => this.downloadXlsxFile()}>Download data</button>
+        <Button color="primary" onClick={() => this.downloadXlsxFile()}>
+          Download data
+        </Button>
         <br />
         <br />
-        <button onClick={() => this.clearState()}>clear data</button>
+        <Button color="warning" onClick={() => this.clearState()}>
+          Clear data
+        </Button>
       </div>
     );
   }
