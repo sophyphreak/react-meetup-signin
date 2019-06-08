@@ -265,6 +265,8 @@ class Basic extends Component {
         </Button>
         <br />
         <br />
+        <br />
+        <br />
         <Button color="warning" onClick={() => this.clearState()}>
           Clear data
         </Button>
