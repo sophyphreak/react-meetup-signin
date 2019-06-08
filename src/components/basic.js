@@ -133,7 +133,7 @@ class Basic extends Component {
                   />
                   <FormFeedback>{errors.email}</FormFeedback>
                   <br />
-                  <Label for="heardAboutUs">How did you hear about us?</Label>
+                  <Label for="heardAboutUs">How'd you hear about us</Label>
                   <Input
                     type="text"
                     name="heardAboutUs"
