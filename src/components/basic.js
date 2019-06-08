@@ -163,6 +163,7 @@ class Basic extends Component {
                   />
                   <FormFeedback>{errors.paymentMethod}</FormFeedback>
                   <br />
+                  <br />
                   <Button
                     type="submit"
                     style={{ backgroundColor: 'rebeccapurple' }}
