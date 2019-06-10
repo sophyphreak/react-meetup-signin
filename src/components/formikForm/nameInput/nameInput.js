@@ -1,13 +1,10 @@
 import React from 'react';
 import { Field } from 'formik';
 import { Label, Input, FormFeedback } from 'reactstrap';
+import BasicInput from '../basicInput';
 
-const NameInput = ({ error, touched }) => (
-  <div>
-    <Label for="name">Name</Label>
-    <Input type="text" name="name" tag={Field} invalid={error && touched} />
-    <FormFeedback>{error}</FormFeedback>
-  </div>
+const NameInput = props => (
+  <BasicInput componentName="name" label="Name" type="text" {...props} />
 );
 
 export default NameInput;
