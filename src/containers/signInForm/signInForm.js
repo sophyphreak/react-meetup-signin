@@ -38,7 +38,7 @@ class SignInForm extends Component {
     };
     this.addSignIn = this.addSignIn.bind(this);
     this.clearState = this.clearState.bind(this);
-    this.downloadXlsxFile = this.downloadXlsxFile.bind(this);
+    this.downloadData = this.downloadData.bind(this);
   }
   componentDidMount() {
     const personList = getLocalStorage();
@@ -56,30 +56,9 @@ class SignInForm extends Component {
     this.setState(() => ({ personList }));
     localStorage.clear();
   }
-  downloadXlsxFile() {
-    // Convert file to useable format array of arrays
+  downloadData() {
     const personList = this.state.personList;
-    const data = [
-      [
-        'Name',
-        'Email',
-        'Hear About Us',
-        'Amount Paid',
-        'Payment Method',
-        'Date'
-      ]
-    ];
-    personList.forEach(person => {
-      data.push([
-        person.name,
-        person.email,
-        person.heardAboutUs,
-        person.amountPaid,
-        person.paymentMethod,
-        person.date
-      ]);
-    });
-    downloadXlsx(data);
+    downloadXlsx(personList);
   }
   render() {
     return (
@@ -242,7 +221,7 @@ class SignInForm extends Component {
         <br />
         <br />
         <br />
-        <Button color="primary" onClick={() => this.downloadXlsxFile()}>
+        <Button color="primary" onClick={() => this.downloadData()}>
           Download data
         </Button>
         <br />
