@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { Formik, Form, Field } from 'formik';
 import {
   FormGroup,
@@ -59,7 +60,14 @@ class SignInForm extends Component {
     // Convert file to useable format array of arrays
     const personList = this.state.personList;
     const data = [
-      ['Name', 'Email', 'Hear About Us', 'Amount Paid', 'Payment Method']
+      [
+        'Name',
+        'Email',
+        'Hear About Us',
+        'Amount Paid',
+        'Payment Method',
+        'Date'
+      ]
     ];
     personList.forEach(person => {
       data.push([
@@ -67,7 +75,8 @@ class SignInForm extends Component {
         person.email,
         person.heardAboutUs,
         person.amountPaid,
-        person.paymentMethod
+        person.paymentMethod,
+        person.date
       ]);
     });
     downloadXlsx(data);
