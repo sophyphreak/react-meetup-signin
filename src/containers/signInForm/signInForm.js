@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
-import moment from 'moment';
-import XLSX from 'xlsx';
 import {
   FormGroup,
   Col,
@@ -12,7 +10,8 @@ import {
   FormFeedback
 } from 'reactstrap';
 
-import SignInSchema from './signInSchema';
+import signInSchema from './signInSchema';
+import downloadXlsx from './downloadXlsx';
 
 const initialValues = {
   name: '',
@@ -36,6 +35,9 @@ class SignInForm extends Component {
     this.state = {
       personList: []
     };
+    this.addSignIn = this.addSignIn.bind(this);
+    this.clearState = this.clearState.bind(this);
+    this.downloadXlsxFile = this.downloadXlsxFile.bind(this);
   }
   componentDidMount() {
     const personList = getLocalStorage();
@@ -68,22 +70,14 @@ class SignInForm extends Component {
         person.paymentMethod
       ]);
     });
-
-    // use XLSX to convert and download file
-    const getFilename = () =>
-      `Kadampa signin ${moment().format('dddd, MMMM Do')}.xlsx`;
-    const filename = getFilename();
-    const worksheet = XLSX.utils.aoa_to_sheet(data);
-    const new_workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(new_workbook, worksheet, 'SheetJS');
-    XLSX.writeFile(new_workbook, filename);
+    downloadXlsx(data);
   }
   render() {
     return (
       <div>
         <Formik
           initialValues={initialValues}
-          validationSchema={SignInSchema}
+          validationSchema={signInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             this.addSignIn(values);
             resetForm(initialValues);
