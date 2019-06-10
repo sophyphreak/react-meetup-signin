@@ -1,18 +1,16 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+
+import DownloadDataButton from './downloadDataButton/downloadDataButton';
+import ClearStateButton from './clearDataButton/clearDataButton';
 
 const AdminButtons = props => (
   <div>
-    <Button color="primary" onClick={() => props.downloadData()}>
-      Download data
-    </Button>
+    <DownloadDataButton downloadData={props.downloadData} />
     <br />
     <br />
     <br />
     <br />
-    <Button color="warning" onClick={() => props.clearState()}>
-      Clear data
-    </Button>
+    <ClearStateButton clearState={props.clearState} />
   </div>
 );
 
