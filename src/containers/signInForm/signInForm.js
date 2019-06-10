@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import { Formik, Form, Field } from 'formik';
-import {
-  FormGroup,
-  Col,
-  Button,
-  Label,
-  Input,
-  InputGroup,
-  FormFeedback
-} from 'reactstrap';
 
+import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
 import downloadXlsx from './downloadXlsx';
+import BigSpace from '../../components/bigSpace/bigSpace';
+import AdminButtons from '../../components/adminButtons/adminButtons';
 
 const initialValues = {
   name: '',
@@ -63,7 +56,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div>
-        <Formik
+        <FormikForm
           initialValues={initialValues}
           validationSchema={signInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -71,166 +64,12 @@ class SignInForm extends Component {
             resetForm(initialValues);
             setSubmitting(false);
           }}
-        >
-          {({ errors, touched, isSubmitting }) => (
-            <Form>
-              <FormGroup>
-                <Col sm="12" md={{ size: 8, offset: 2 }}>
-                  <Label for="name">Name</Label>
-                  <Input
-                    type="text"
-                    name="name"
-                    tag={Field}
-                    invalid={errors.name && touched.name}
-                  />
-                  <FormFeedback>{errors.name}</FormFeedback>
-                  <br />
-                  <Label for="email">Email</Label>
-                  <Input
-                    type="email"
-                    name="email"
-                    tag={Field}
-                    invalid={errors.email && touched.email}
-                  />
-                  <FormFeedback>{errors.email}</FormFeedback>
-                  <br />
-                  <Label for="heardAboutUs">How'd you hear about us</Label>
-                  <Input
-                    type="text"
-                    name="heardAboutUs"
-                    tag={Field}
-                    invalid={errors.heardAboutUs && touched.heardAboutUs}
-                  />
-                  <FormFeedback>{errors.heardAboutUs}</FormFeedback>
-                  <br />
-                  <Label for="amountPaid">Amount Paid</Label>
-                  <InputGroup>
-                    <p style={{ margin: '.45em .4em 0 0' }}>$</p>
-                    <Input
-                      type="number"
-                      name="amountPaid"
-                      tag={Field}
-                      invalid={errors.amountPaid && touched.amountPaid}
-                    />
-                    <FormFeedback>{errors.amountPaid}</FormFeedback>
-                  </InputGroup>
-                  <br />
-                  <Label for="paymentMethod">Payment Method</Label>
-                  <Input
-                    type="text"
-                    name="paymentMethod"
-                    tag={Field}
-                    invalid={errors.paymentMethod && touched.paymentMethod}
-                  />
-                  <FormFeedback>{errors.paymentMethod}</FormFeedback>
-                  <br />
-                  <br />
-                  <Button
-                    type="submit"
-                    style={{ backgroundColor: 'rebeccapurple' }}
-                    disabled={isSubmitting}
-                  >
-                    Submit
-                  </Button>
-                </Col>
-              </FormGroup>
-            </Form>
-          )}
-        </Formik>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Button color="primary" onClick={() => this.downloadData()}>
-          Download data
-        </Button>
-        <br />
-        <br />
-        <br />
-        <br />
-        <Button color="warning" onClick={() => this.clearState()}>
-          Clear data
-        </Button>
+        />
+        <BigSpace />
+        <AdminButtons
+          downloadData={this.downloadData}
+          clearState={this.clearState}
+        />
       </div>
     );
   }
