@@ -85,7 +85,6 @@ class SignInForm extends Component {
           initialValues={initialValues}
           validationSchema={SignInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
-            console.log(values);
             this.addSignIn(values);
             resetForm(initialValues);
             setSubmitting(false);
