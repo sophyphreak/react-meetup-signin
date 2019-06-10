@@ -9,6 +9,7 @@ import {
   InputGroup,
   FormFeedback
 } from 'reactstrap';
+import NameInput from './nameInput/nameInput';
 
 const FormikForm = props => (
   <Formik
@@ -20,14 +21,7 @@ const FormikForm = props => (
       <Form>
         <FormGroup>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <Label for="name">Name</Label>
-            <Input
-              type="text"
-              name="name"
-              tag={Field}
-              invalid={errors.name && touched.name}
-            />
-            <FormFeedback>{errors.name}</FormFeedback>
+            <NameInput error={errors.name} touched={touched.name} />
             <br />
             <Label for="email">Email</Label>
             <Input
