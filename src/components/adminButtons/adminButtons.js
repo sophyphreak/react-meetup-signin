@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DownloadDataButton from './downloadDataButton/downloadDataButton';
-import ClearStateButton from './clearDataButton/clearDataButton';
+import ClearDataButton from './clearDataButton/clearDataButton';
 
 const AdminButtons = props => (
   <div>
@@ -10,7 +10,7 @@ const AdminButtons = props => (
     <br />
     <br />
     <br />
-    <ClearStateButton clearState={props.clearState} />
+    <ClearDataButton clearState={props.clearState} />
   </div>
 );
 
