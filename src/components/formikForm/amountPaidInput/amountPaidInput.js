@@ -5,7 +5,7 @@ const AmountPaidInput = props => (
   <BasicInput
     componentName="amountPaid"
     label="Amount Paid"
-    type="number"
+    type="text"
     {...props}
   />
 );
