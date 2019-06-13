@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
-import { FormGroup, Col, Button } from 'reactstrap';
+import { FormGroup, Col, Button, Modal, ModalBody } from 'reactstrap';
 import NameInput from './nameInput/nameInput';
 import EmailInput from './emailInput/emailInput';
 import HeardAboutUs from './heardAboutUsInput/heardAboutUs';
@@ -17,7 +17,10 @@ const FormikForm = props => (
       <Form>
         <FormGroup>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <input type="hidden" value="hidden" />
+            <input type="hidden" value="for disrupting autocomplete" />
+            <Modal isOpen={props.successModal} centered={true}>
+              <ModalBody>Success!</ModalBody>
+            </Modal>
             <NameInput error={errors.name} touched={touched.name} />
             <br />
             <EmailInput error={errors.email} touched={touched.email} />

@@ -27,7 +27,8 @@ class SignInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      personList: []
+      personList: [],
+      successModal: false
     };
     this.addSignIn = this.addSignIn.bind(this);
     this.clearState = this.clearState.bind(this);
@@ -38,11 +39,15 @@ class SignInForm extends Component {
     this.setState(() => ({ personList }));
   }
   addSignIn(person) {
+    this.setState({ successModal: true });
     person.date = moment().format('dddd, MMMM Do YYYY');
     const { personList } = this.state;
     personList.push(person);
     this.setState(() => ({ personList }));
     localStorage.setItem('local', JSON.stringify(personList));
+    setTimeout(() => {
+      this.setState({ successModal: false });
+    }, 1500);
   }
   clearState() {
     const personList = [];
@@ -64,6 +69,7 @@ class SignInForm extends Component {
             resetForm(initialValues);
             setSubmitting(false);
           }}
+          successModal={this.state.successModal}
         />
         <BigSpace />
         <AdminButtons
