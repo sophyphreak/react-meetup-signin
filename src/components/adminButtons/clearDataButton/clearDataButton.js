@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+import ClearDataModal from './clearDataModal/clearDataModal';
+import SuccessModal from './successModal/successModal';
+
 class ClearStateButton extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +12,7 @@ class ClearStateButton extends Component {
       successModal: false
     };
 
+    this.triggerClearState = this.triggerClearState.bind(this);
     this.toggleClearDataModal = this.toggleClearDataModal.bind(this);
   }
   triggerClearState() {
@@ -30,26 +34,12 @@ class ClearStateButton extends Component {
         <Button color="warning" onClick={() => this.toggleClearDataModal()}>
           Clear data
         </Button>
-        <Modal isOpen={this.state.clearDataModal} centered={true}>
-          <ModalHeader>Clear data</ModalHeader>
-          <ModalBody>
-            Do you really want to clear all data in this app?
-          </ModalBody>
-          <ModalFooter>
-            <Button color="danger" onClick={() => this.triggerClearState()}>
-              Yes, clear all data now
-            </Button>
-            <Button
-              color="secondary"
-              onClick={() => this.toggleClearDataModal()}
-            >
-              cancel
-            </Button>
-          </ModalFooter>
-        </Modal>
-        <Modal isOpen={this.state.successModal} centered={true}>
-          <ModalBody>Success! You cleared all data!</ModalBody>
-        </Modal>
+        <ClearDataModal
+          clearDataModal={this.state.clearDataModal}
+          triggerClearState={this.triggerClearState}
+          toggleClearDataModal={this.toggleClearDataModal}
+        />
+        <SuccessModal successModal={this.state.successModal} />
       </div>
     );
   }
