@@ -59,7 +59,7 @@ class SignInForm extends Component {
           validationSchema={signInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             this.addSignIn(values);
-            resetForm(initialValues);
+            resetForm(formInitialValues);
             setSubmitting(false);
           }}
           successModal={this.state.successModal}
