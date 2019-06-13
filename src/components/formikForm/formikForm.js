@@ -17,6 +17,7 @@ const FormikForm = props => (
       <Form>
         <FormGroup>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
+            <input type="hidden" value="hidden" />
             <NameInput error={errors.name} touched={touched.name} />
             <br />
             <EmailInput error={errors.email} touched={touched.email} />

@@ -10,6 +10,7 @@ const BasicInput = ({ componentName, label, type, error, touched }) => (
       name={componentName}
       tag={Field}
       invalid={error && touched}
+      autoComplete="off"
     />
     <FormFeedback>{error}</FormFeedback>
   </div>
