@@ -6,14 +6,7 @@ import signInSchema from './signInSchema';
 import downloadXlsx from './downloadXlsx';
 import BigSpace from '../../components/bigSpace/bigSpace';
 import AdminButtons from '../../components/adminButtons/adminButtons';
-
-const initialValues = {
-  name: '',
-  email: '',
-  heardAboutUs: '',
-  amountPaid: '',
-  paymentMethod: ''
-};
+import formInitialValues from './formInitialValues';
 
 const getLocalStorage = () => {
   let local = [];
@@ -62,7 +55,7 @@ class SignInForm extends Component {
     return (
       <div>
         <FormikForm
-          initialValues={initialValues}
+          initialValues={formInitialValues}
           validationSchema={signInSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
             this.addSignIn(values);
