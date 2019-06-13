@@ -9,17 +9,17 @@ class ClearStateButton extends Component {
       successModal: false
     };
 
-    this.toggle = this.toggle.bind(this);
+    this.toggleClearDataModal = this.toggleClearDataModal.bind(this);
   }
   triggerClearState() {
-    this.toggle();
+    this.toggleClearDataModal();
     this.setState({ successModal: true });
     this.props.clearState();
     setTimeout(() => {
       this.setState({ successModal: false });
     }, 3000);
   }
-  toggle() {
+  toggleClearDataModal() {
     this.setState(prevState => ({
       clearDataModal: !prevState.clearDataModal
     }));
@@ -27,7 +27,7 @@ class ClearStateButton extends Component {
   render() {
     return (
       <div>
-        <Button color="warning" onClick={() => this.toggle()}>
+        <Button color="warning" onClick={() => this.toggleClearDataModal()}>
           Clear data
         </Button>
         <Modal isOpen={this.state.clearDataModal} centered={true}>
@@ -39,7 +39,10 @@ class ClearStateButton extends Component {
             <Button color="danger" onClick={() => this.triggerClearState()}>
               Yes, clear all data now
             </Button>
-            <Button color="secondary" onClick={() => this.toggle()}>
+            <Button
+              color="secondary"
+              onClick={() => this.toggleClearDataModal()}
+            >
               cancel
             </Button>
           </ModalFooter>
