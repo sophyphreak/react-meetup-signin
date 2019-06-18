@@ -1,6 +1,7 @@
 TODOS:
 
 - add radio buttons to payment and payment method
+- add dropdown for how you heard of us
 - make all fields EXCEPT name not required
 - add device name at end of file name
 - send w/ Gmail button at bottom
