@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field } from 'formik';
 import { Input, Label } from 'reactstrap';
-// import BasicInput from '../basicInput';
 
 const HeardAboutUs = () => (
   <div>
