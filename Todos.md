@@ -1,6 +1,5 @@
 TODOS:
 
-- on submit, reload page (go to top)
 - add radio buttons to payment and payment method
 - make all fields EXCEPT name not required
 - add device name at end of file name

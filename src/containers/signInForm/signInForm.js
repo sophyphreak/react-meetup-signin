@@ -41,6 +41,7 @@ class SignInForm extends Component {
     setTimeout(() => {
       this.setState({ successModal: false });
     }, 1500);
+    window.scrollTo(0, 0);
   }
   clearState() {
     const personList = [];
