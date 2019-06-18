@@ -1,6 +1,5 @@
 TODOS:
 
-- no submit on return!!! (except on submit button)
 - focus name field on load
 - on submit, reload page (go to top)
 - add radio buttons to payment and payment method

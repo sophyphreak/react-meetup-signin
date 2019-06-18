@@ -11,6 +11,9 @@ const BasicInput = ({ componentName, label, type, error, touched }) => (
       tag={Field}
       invalid={error && touched}
       autoComplete="off"
+      onKeyPress={e => {
+        e.key === 'Enter' && e.preventDefault();
+      }}
     />
     <FormFeedback>{error}</FormFeedback>
   </div>
