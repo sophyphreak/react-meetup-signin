@@ -4,7 +4,6 @@ TODOS:
 - add contact the developer button + contact page w/ netlify
 - add button that makes modal pop up with everything in this.state.personList
 
-- add device name at end of file name
 - bold headline in xlsx doc
 - add count of number of attendees (b/c why not)
 
