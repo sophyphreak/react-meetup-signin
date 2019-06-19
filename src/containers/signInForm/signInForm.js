@@ -7,14 +7,7 @@ import downloadXlsx from './downloadXlsx';
 import BigSpace from '../../components/bigSpace/bigSpace';
 import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
-
-const getLocalStorage = () => {
-  let local = [];
-  if (!JSON.parse(localStorage.getItem('local'))) {
-    return local;
-  }
-  return JSON.parse(localStorage.getItem('local'));
-};
+import getLocalStorage from './getLocalStorage';
 
 class SignInForm extends Component {
   constructor(props) {
@@ -83,5 +76,13 @@ class SignInForm extends Component {
     );
   }
 }
+
+// const getLocalStorage = () => {
+//   let local = [];
+//   if (!JSON.parse(localStorage.getItem('local'))) {
+//     return local;
+//   }
+//   return JSON.parse(localStorage.getItem('local'));
+// };
 
 export default SignInForm;
