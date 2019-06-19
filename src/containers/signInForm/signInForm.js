@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 
 import FormikForm from '../../components/formikForm/formikForm';
 import signInSchema from './signInSchema';
@@ -8,6 +7,7 @@ import BigSpace from '../../components/bigSpace/bigSpace';
 import AdminButtons from '../../components/adminButtons/adminButtons';
 import formInitialValues from './formInitialValues';
 import getLocalStorage from './getLocalStorage';
+import preparePerson from './preparePerson';
 
 class SignInForm extends Component {
   constructor(props) {
@@ -26,16 +26,7 @@ class SignInForm extends Component {
   }
   addSignIn(person) {
     this.setState({ successModal: true });
-    person.date = moment().format('dddd, MMMM Do YYYY');
-    if (person.heardAboutUs === 'Other' && person.other.heardAboutUs) {
-      person.heardAboutUs = person.other.heardAboutUs;
-    }
-    if (person.amountPaid === 'other' && person.other.amountPaid) {
-      person.amountPaid = person.other.amountPaid;
-    }
-    if (person.paymentMethod === 'other' && person.other.paymentMethod) {
-      person.paymentMethod = person.other.paymentMethod;
-    }
+    person = preparePerson(person);
     const { personList } = this.state;
     personList.push(person);
     this.setState(() => ({ personList }));
