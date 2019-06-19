@@ -31,7 +31,6 @@ const FormikForm = props => (
             <br />
             <PaymentMethodInput value={values.paymentMethod} />
             <br />
-            <br />
             <Button
               type="submit"
               style={{ backgroundColor: 'rebeccapurple' }}
