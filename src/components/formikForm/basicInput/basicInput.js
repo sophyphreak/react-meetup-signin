@@ -4,8 +4,8 @@ import { Label, Input, FormFeedback } from 'reactstrap';
 
 const BasicInput = ({
   componentName,
-  label,
-  type,
+  label = '',
+  type = 'text',
   error,
   touched,
   autoFocus = false
