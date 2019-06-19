@@ -28,6 +28,8 @@ const convertToArrayOfArrays = personList => {
 };
 
 const getFilename = () =>
-  `Kadampa signin ${moment().format('dddd, MMMM Do')}.xlsx`;
+  `KMC Signins ${moment().format('ddd, MMMM Do')} - Screen ${
+    window.screen.width
+  }x${window.screen.height}.xlsx`;
 
 export default downloadXlsx;
