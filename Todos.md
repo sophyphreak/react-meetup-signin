@@ -1,7 +1,7 @@
 TODOS:
 
-- add radio buttons to payment and payment method
-- add "other" specific field for heardOfUs
+- add "other" specific field for select and radio buttons
+
 - add "downloaded" flag, false until download button pushed, true on submit and on clear data. clear data button doesn't appear when flag is false
 - add contact the developer button + contact page w/ netlify
 - add list of data in state at bottom of app
