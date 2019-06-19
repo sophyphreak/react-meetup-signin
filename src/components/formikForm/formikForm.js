@@ -13,7 +13,7 @@ const FormikForm = props => (
     validationSchema={props.validationSchema}
     onSubmit={props.onSubmit}
   >
-    {({ errors, touched, isSubmitting }) => (
+    {({ values, errors, touched, isSubmitting }) => (
       <Form>
         <FormGroup>
           <Col sm="12" md={{ size: 8, offset: 2 }}>
@@ -25,20 +25,11 @@ const FormikForm = props => (
             <br />
             <EmailInput error={errors.email} touched={touched.email} />
             <br />
-            <HeardAboutUs
-              error={errors.heardAboutUs}
-              touched={touched.heardAboutUs}
-            />
+            <HeardAboutUs />
             <br />
-            <AmountPaidInput
-              error={errors.amountPaid}
-              touched={touched.amountPaid}
-            />
+            <AmountPaidInput value={values.amountPaid} />
             <br />
-            <PaymentMethodInput
-              error={errors.paymentMethod}
-              touched={touched.paymentMethod}
-            />
+            <PaymentMethodInput value={values.paymentMethod} />
             <br />
             <br />
             <Button
