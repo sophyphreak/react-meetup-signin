@@ -13,7 +13,7 @@ const selectLabels = [
   'Other'
 ];
 
-const HeardAboutUs = props => (
+const HeardAboutUsInput = props => (
   <SelectInput
     sectionLabel="How'd you hear about us"
     componentName="heardAboutUs"
@@ -22,4 +22,4 @@ const HeardAboutUs = props => (
   />
 );
 
-export default HeardAboutUs;
+export default HeardAboutUsInput;
