@@ -2,6 +2,6 @@ export default {
   name: '',
   email: '',
   heardAboutUs: '',
-  amountPaid: '',
-  paymentMethod: ''
+  amountPaid: 'prepaid',
+  paymentMethod: 'prepaid'
 };
