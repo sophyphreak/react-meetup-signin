@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 import ClearDataModal from './clearDataModal/clearDataModal';
 import SuccessModal from './successModal/successModal';
