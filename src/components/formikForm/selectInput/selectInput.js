@@ -2,8 +2,15 @@ import React from 'react';
 import { Field } from 'formik';
 import { Input, Label } from 'reactstrap';
 import Select from './select';
+import BasicInput from '../basicInput/basicInput';
 
-const SelectInput = ({ sectionLabel, selectLabels, componentName }) => (
+const SelectInput = ({
+  value,
+  sectionLabel,
+  selectLabels,
+  componentName,
+  other
+}) => (
   <>
     <Label for={componentName}>{sectionLabel}</Label>
     <br />
@@ -13,6 +20,9 @@ const SelectInput = ({ sectionLabel, selectLabels, componentName }) => (
         <Select label={label} />
       ))}
     </Input>
+    {value === 'Other' && (
+      <BasicInput componentName={`other.${componentName}`} />
+    )}
   </>
 );
 

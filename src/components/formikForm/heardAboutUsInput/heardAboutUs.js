@@ -9,14 +9,16 @@ const selectLabels = [
   'Google search',
   'Friend/Family',
   'Walk by',
-  'Attended KMC Houston before'
+  'Attended KMC Houston before',
+  'Other'
 ];
 
-const HeardAboutUs = () => (
+const HeardAboutUs = props => (
   <SelectInput
     sectionLabel="How'd you hear about us"
     componentName="heardAboutUs"
     selectLabels={selectLabels}
+    {...props}
   />
 );
 
