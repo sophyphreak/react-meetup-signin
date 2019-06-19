@@ -4,13 +4,7 @@ import { Input, Label } from 'reactstrap';
 import Select from './select';
 import BasicInput from '../basicInput/basicInput';
 
-const SelectInput = ({
-  value,
-  sectionLabel,
-  selectLabels,
-  componentName,
-  other
-}) => (
+const SelectInput = ({ value, sectionLabel, selectLabels, componentName }) => (
   <>
     <Label for={componentName}>{sectionLabel}</Label>
     <br />
