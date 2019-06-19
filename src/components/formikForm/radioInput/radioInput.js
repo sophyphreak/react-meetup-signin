@@ -1,6 +1,6 @@
 import React from 'react';
-import { Label, Input, FormGroup } from 'reactstrap';
-import { Field } from 'formik';
+import { Label, FormGroup } from 'reactstrap';
+import Radio from './radio';
 
 const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
   <div>
@@ -16,21 +16,6 @@ const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
         />
       ))}
     </FormGroup>
-  </div>
-);
-
-const Radio = ({ checked, componentName, label, value }) => (
-  <div>
-    <Label>
-      <Input
-        checked={checked}
-        tag={Field}
-        type="radio"
-        name={componentName}
-        value={value}
-      />
-      {label}
-    </Label>
   </div>
 );
 
