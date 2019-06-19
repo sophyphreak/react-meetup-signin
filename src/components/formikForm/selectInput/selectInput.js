@@ -14,7 +14,7 @@ const SelectInput = ({ value, sectionLabel, selectLabels, componentName }) => (
         <Select label={label} />
       ))}
     </Input>
-    {value === 'Other' && (
+    {(value === 'Other' || value === 'other') && (
       <BasicInput componentName={`other.${componentName}`} />
     )}
   </>
