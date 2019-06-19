@@ -10,7 +10,7 @@ const BasicInput = ({
   touched,
   autoFocus = false
 }) => (
-  <div>
+  <>
     <Label for={componentName}>{label}</Label>
     <Input
       autoFocus={autoFocus}
@@ -24,7 +24,7 @@ const BasicInput = ({
       }}
     />
     <FormFeedback>{error}</FormFeedback>
-  </div>
+  </>
 );
 
 export default BasicInput;

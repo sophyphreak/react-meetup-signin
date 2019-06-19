@@ -54,7 +54,7 @@ class SignInForm extends Component {
   }
   render() {
     return (
-      <div>
+      <>
         <FormikForm
           initialValues={formInitialValues}
           validationSchema={signInSchema}
@@ -70,7 +70,7 @@ class SignInForm extends Component {
           downloadData={this.downloadData}
           clearState={this.clearState}
         />
-      </div>
+      </>
     );
   }
 }

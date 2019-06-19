@@ -3,7 +3,7 @@ import { Label, FormGroup } from 'reactstrap';
 import Radio from './radio';
 
 const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
-  <div>
+  <>
     <Label>{sectionLabel}</Label>
     <br />
     <FormGroup name={componentName} check>
@@ -16,7 +16,7 @@ const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
         />
       ))}
     </FormGroup>
-  </div>
+  </>
 );
 
 export default RadioInput;
