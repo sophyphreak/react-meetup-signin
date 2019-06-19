@@ -3,5 +3,10 @@ export default {
   email: '',
   heardAboutUs: '',
   amountPaid: 'prepaid',
-  paymentMethod: 'prepaid'
+  paymentMethod: 'prepaid',
+  other: {
+    heardAboutUs: '',
+    amountPaid: '',
+    paymentMethod: ''
+  }
 };
