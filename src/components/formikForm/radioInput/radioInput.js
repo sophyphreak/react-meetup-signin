@@ -1,6 +1,7 @@
 import React from 'react';
 import { Label, FormGroup } from 'reactstrap';
 import Radio from './radio';
+import BasicInput from '../basicInput/basicInput';
 
 const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
   <>
@@ -16,6 +17,9 @@ const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
         />
       ))}
     </FormGroup>
+    {value === 'other' && (
+      <BasicInput componentName={`other.${componentName}`} />
+    )}
   </>
 );
 

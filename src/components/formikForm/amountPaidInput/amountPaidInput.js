@@ -1,7 +1,7 @@
 import React from 'react';
 import RadioInput from '../radioInput/radioInput';
 
-const radioLabels = ['prepaid', '$10', '$35'];
+const radioLabels = ['prepaid', '$10', '$35', 'other'];
 
 const AmountPaidInput = props => (
   <RadioInput
