@@ -1,5 +1,5 @@
 import React from 'react';
-import RadioInput from '../radioInput';
+import RadioInput from '../radioInput/radioInput';
 
 const radioLabels = ['prepaid', 'cash', 'credit card'];
 

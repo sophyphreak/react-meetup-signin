@@ -1,5 +1,5 @@
 import React from 'react';
-import BasicInput from '../basicInput';
+import BasicInput from '../basicInput/basicInput';
 
 const NameInput = props => (
   <BasicInput
