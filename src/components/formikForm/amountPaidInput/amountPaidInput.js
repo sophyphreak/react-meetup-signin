@@ -1,13 +1,13 @@
 import React from 'react';
-import RadioInput from '../radioInput/radioInput';
+import SelectInput from '../selectInput/selectInput';
 
-const radioLabels = ['prepaid', '$10', '$35', 'other'];
+const selectLabels = ['prepaid', '$10', '$35', 'other'];
 
 const AmountPaidInput = props => (
-  <RadioInput
+  <SelectInput
     sectionLabel="Amount Paid"
     componentName="amountPaid"
-    radioLabels={radioLabels}
+    selectLabels={selectLabels}
     {...props}
   />
 );
