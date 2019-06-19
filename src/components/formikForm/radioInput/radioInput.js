@@ -7,7 +7,7 @@ const RadioInput = ({ value, componentName, sectionLabel, radioLabels }) => (
     <Label>{sectionLabel}</Label>
     <br />
     <FormGroup name={componentName} check>
-      {radioLabels.map((label, index) => (
+      {radioLabels.map(label => (
         <Radio
           checked={value === label}
           componentName={componentName}
