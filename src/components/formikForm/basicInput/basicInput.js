@@ -8,7 +8,8 @@ const BasicInput = ({
   type = 'text',
   error,
   touched,
-  autoFocus = false
+  autoFocus = false,
+  placeholder = ''
 }) => (
   <>
     <Label for={componentName}>{label}</Label>
@@ -19,6 +20,7 @@ const BasicInput = ({
       tag={Field}
       invalid={error && touched}
       autoComplete="off"
+      placeholder={placeholder}
       onKeyPress={e => {
         e.key === 'Enter' && e.preventDefault();
       }}
