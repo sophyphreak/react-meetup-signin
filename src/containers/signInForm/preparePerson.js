@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 const preparePerson = person => {
-  person.date = moment().format('dddd, MMMM Do YYYY');
+  person.date = moment();
   if (person.heardAboutUs === 'Other' && person.other.heardAboutUs) {
     person.heardAboutUs = person.other.heardAboutUs;
   }
