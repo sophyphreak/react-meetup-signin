@@ -60,6 +60,7 @@ class SignInForm extends Component {
         />
         <BigSpace />
         <AdminButtons
+          personList={this.state.personList}
           downloadData={this.downloadData}
           clearState={this.clearState}
         />
