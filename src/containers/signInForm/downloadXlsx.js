@@ -34,7 +34,7 @@ const convertToArrayOfArrays = personList => {
       person.heardAboutUs,
       person.amountPaid,
       person.paymentMethod,
-      person.date
+      moment(person.date).format('ddd, MMMM D, YYYY')
     ]);
   });
   return data;
