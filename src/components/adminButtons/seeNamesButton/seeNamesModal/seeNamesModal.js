@@ -6,12 +6,7 @@ import PersonNamesTable from './personNamesTable/personNamesTable';
 const SeeDataModal = ({ personList, seeDataModal, toggleSeeDataModal }) => (
   <Modal isOpen={seeDataModal} toggle={toggleSeeDataModal}>
     <ModalHeader>
-      Data
-      <Button
-        color="danger"
-        style={{ marginLeft: '15em' }}
-        onClick={() => toggleSeeDataModal()}
-      >
+      <Button color="danger" onClick={() => toggleSeeDataModal()}>
         Close
       </Button>
     </ModalHeader>
