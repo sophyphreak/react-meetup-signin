@@ -31,7 +31,7 @@ const convertToArrayOfArrays = personList => {
 };
 
 const getFilename = () =>
-  `KMC Signins ${moment().format('ddd, MMMM Do')} - Screen ${
+  `React Signins ${moment().format('ddd, MMMM Do')} - Screen ${
     window.screen.width
   }x${window.screen.height}.xlsx`;
 
