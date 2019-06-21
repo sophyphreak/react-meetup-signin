@@ -5,10 +5,9 @@ const SignInSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(100, 'Too Long!')
     .required('Required'),
-  email: Yup.string().email('Invalid email'),
-  heardAboutUs: Yup.string().max(50, 'Too Long!'),
-  amountPaid: Yup.string(),
-  paymentMethod: Yup.string()
+  company: Yup.string(),
+  phone: Yup.string(),
+  email: Yup.string().email('Invalid email')
 });
 
 export default SignInSchema;
