@@ -13,16 +13,7 @@ const downloadXlsx = personList => {
 const convertToArrayOfArrays = personList => {
   const data = [
     ['', '', '', '', '', '', '', ''],
-    [
-      '',
-      '#',
-      'Name',
-      'Email',
-      'Hear About Us',
-      'Amount Paid',
-      'Payment Method',
-      'Date'
-    ],
+    ['', '#', 'Name', 'Company', 'Phone', 'Email', 'Date'],
     ['', '', '', '', '', '', '', '']
   ];
   personList.forEach((person, index) => {
@@ -30,10 +21,9 @@ const convertToArrayOfArrays = personList => {
       '',
       (index + 1).toString(),
       person.name,
+      person.company,
+      person.phone,
       person.email,
-      person.heardAboutUs,
-      person.amountPaid,
-      person.paymentMethod,
       moment(person.date).format('ddd, MMMM D, YYYY')
     ]);
   });
