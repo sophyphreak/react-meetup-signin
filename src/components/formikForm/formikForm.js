@@ -3,9 +3,6 @@ import { Formik, Form } from 'formik';
 import { FormGroup, Col, Button, Modal, ModalBody } from 'reactstrap';
 import NameInput from './nameInput/nameInput';
 import EmailInput from './emailInput/emailInput';
-import HeardAboutUsInput from './heardAboutUsInput/heardAboutUsInput';
-import AmountPaidInput from './amountPaidInput/amountPaidInput';
-import PaymentMethodInput from './paymentMethodInput/paymentMethodInput';
 
 const FormikForm = props => (
   <Formik
@@ -24,12 +21,6 @@ const FormikForm = props => (
             <NameInput error={errors.name} touched={touched.name} />
             <br />
             <EmailInput error={errors.email} touched={touched.email} />
-            <br />
-            <HeardAboutUsInput value={values.heardAboutUs} />
-            <br />
-            <AmountPaidInput value={values.amountPaid} />
-            <br />
-            <PaymentMethodInput value={values.paymentMethod} />
             <br />
             <Button
               type="submit"
