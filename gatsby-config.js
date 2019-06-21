@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Kadampa Meditation Sign In`,
-    description: `Houston Kadampa meditation group sign in sheet`,
+    title: `Houston React Meetup Sign In`,
+    description: `Houston React Meetup sign in sheet`,
     author: `Andrew Horn`
   },
   plugins: [
